@@ -1,0 +1,22 @@
+{
+  "name": "knots-and-crosses",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LadiesOfCodeGroupSessions/knots-and-crosses.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LadiesOfCodeGroupSessions/knots-and-crosses/issues"
+  },
+  "homepage": "https://github.com/LadiesOfCodeGroupSessions/knots-and-crosses#readme",
+  "dependencies": {
+    "jest": "^29.4.1"
+  }
+}
