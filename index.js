@@ -1,5 +1,5 @@
-function game() {
-    return false;
-  }
-  module.exports = game;
-  
+function startGame() {
+	return [[], [], []];
+}
+
+module.exports = startGame;

@@ -1,9 +1,5 @@
 const game = require("./index");
 
-
-test("initial test", () => {
-	expect(
-		game(
-			
-		)).toBe(2);
+test("that a user can start a new game", () => {
+	expect(game.startGame()).toBe([[], [], []]);
 });
