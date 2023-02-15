@@ -1,5 +1,10 @@
-function startGame() {
-	return [[], [], []];
+const game = {
+  startGame() {
+    return [[], [], []];
+  }
+
 }
 
-module.exports = startGame;
+ 
+
+module.exports = game;
