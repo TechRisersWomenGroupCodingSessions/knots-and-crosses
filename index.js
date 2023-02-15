@@ -6,6 +6,10 @@ const game = {
 
 		return this.gameBoard;
 	},
+
+	getBoard() {
+		
+	}
 };
 
 module.exports = game;
