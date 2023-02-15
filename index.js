@@ -1,10 +1,11 @@
 const game = {
-  startGame() {
-    return [[], [], []];
-  }
+	gameBoard: [],
 
-}
+	startGame() {
+		this.gameBoard = [];
 
- 
+		return this.gameBoard;
+	},
+};
 
 module.exports = game;
