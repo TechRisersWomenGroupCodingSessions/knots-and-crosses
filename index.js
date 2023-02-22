@@ -1,7 +1,7 @@
 const game = {
 	gameBoard: [],
-	player1: "",
-	player2: "",
+	player1Token: "",
+	player2Token: "",
 
 	// startGame resets the game
 	startGame() {
@@ -14,9 +14,11 @@ const game = {
 		return this.gameBoard;
 	},
 
-	setPlayers(token) {
-		this.players[0] = token;
-		return this.players;
+	setPlayers(tokens) {
+		this.player1Token = tokens[0];
+		this.player2Token = tokens[1];
+		
+		return [this.player1Token, this.player2Token];
 	},
 };
 

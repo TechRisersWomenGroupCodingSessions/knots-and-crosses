@@ -9,5 +9,5 @@ test("player one selects their token", () => {
 	knotsAndCrosses.startGame();
 	knotsAndCrosses.setPlayers(["X", "O"]);
 
-	expect(knotsAndCrosses.players).toEqual("X");
+	expect(knotsAndCrosses.player1Token).toEqual("X");
 });
