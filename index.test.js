@@ -7,6 +7,7 @@ test("that a user can start a new ", () => {
 
 test("player one selects their token", () => {
 	knotsAndCrosses.startGame();
+	knotsAndCrosses.setPlayers(["X", "O"]);
 
-	expect(knotsAndCrosses.setPlayerOneToken("X")).toEqual("X");
+	expect(knotsAndCrosses.players).toEqual("X");
 });
