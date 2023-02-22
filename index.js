@@ -1,6 +1,6 @@
 const game = {
 	gameBoard: [],
-
+	// startGame resets the game
 	startGame() {
 		this.gameBoard = [];
 
@@ -8,8 +8,9 @@ const game = {
 	},
 
 	getBoard() {
-		
+		return this.gameBoard;
 	}
+	
 };
 
 module.exports = game;
