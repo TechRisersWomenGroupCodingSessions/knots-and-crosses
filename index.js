@@ -5,7 +5,7 @@ const game = {
 
 	// startGame resets the game
 	startGame() {
-		this.gameBoard = [];
+		this.gameBoard = ["-", "-", "-", "-", "-", "-", "-"];
 
 		return this.gameBoard;
 	},

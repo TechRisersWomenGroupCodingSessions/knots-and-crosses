@@ -2,7 +2,17 @@ const knotsAndCrosses = require("./index");
 
 test("that a user can start a new ", () => {
 	knotsAndCrosses.startGame();
-	expect(knotsAndCrosses.getBoard()).toEqual([]);
+	expect(knotsAndCrosses.getBoard()).toEqual([
+		"-",
+		"-",
+		"-",
+		"-",
+		"-",
+		"-",
+		"-",
+		"-",
+		"-",
+	]);
 });
 
 test("when tokens are set as [X,O], player1's token is X", () => {
@@ -22,8 +32,8 @@ test("Player1 selects a first square, gameBoard has player1's token at index 0",
 	knotsAndCrosses.startGame();
 	knotsAndCrosses.setPlayers(["X", "O"]);
 	knotsAndCrosses.player1Turn(0);
-
-	expect(knotsAndCrosses.getBoard()).toBe([
+	console.log(knotsAndCrosses.getBoard());
+	expect(knotsAndCrosses.getBoard()).toEqual([
 		"X",
 		"-",
 		"-",
