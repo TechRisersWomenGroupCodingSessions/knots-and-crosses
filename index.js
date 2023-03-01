@@ -22,24 +22,38 @@ const game = {
 	},
 
 	player1Turn(space) {
-		if (this.gameBoard[space] == '-') {
-			this.gameBoard[space] = this.player1Token;
-			return true;
+		if (this.gameInPlay()){
+			if (this.gameBoard[space] == '-') {
+				this.gameBoard[space] = this.player1Token;
+				return true;
+			}
+			else {
+				return false;
+			}
 		}
 		else {
-			return false;
+			return "GAME OVER!";
 		}
 	},
 
 	player2Turn(space) {
-		if (this.gameBoard[space] == '-') {
-			this.gameBoard[space] = this.player2Token;
-			return true;
+		if (this.gameInPlay()){
+			if (this.gameBoard[space] == '-') {
+				this.gameBoard[space] = this.player2Token;
+				return true;
+			}
+			else {
+				return false;
+			}
 		}
 		else {
-			return false;
+			return "GAME OVER!";
 		}
 	},
+
+	gameInPlay() {
+		return this.gameBoard.includes("-");
+	} 
 };
 
 module.exports = game;

@@ -83,7 +83,8 @@ test("Player2 select filled square after Player1 @index0", () => {
 
 	expect(knotsAndCrosses.player2Turn(0)).toEqual(false);
 });
-test("Players cannot make selections when all squares are filled", () => {
+
+test("Player1 cannot make selections when all squares are filled", () => {
 	knotsAndCrosses.startGame();
 	knotsAndCrosses.setPlayers(["X", "O"]);
 	knotsAndCrosses.player1Turn(0);
@@ -96,5 +97,21 @@ test("Players cannot make selections when all squares are filled", () => {
 	knotsAndCrosses.player2Turn(7);
 	knotsAndCrosses.player1Turn(8);
 
-	expect(knotsAndCrosses.player2Turn(0)).toEqual(["GAME OVER!"]);
+	expect(knotsAndCrosses.player1Turn(0)).toEqual("GAME OVER!");
+});
+
+test("Player2 cannot make selections when all squares are filled", () => {
+	knotsAndCrosses.startGame();
+	knotsAndCrosses.setPlayers(["X", "O"]);
+	knotsAndCrosses.player1Turn(0);
+	knotsAndCrosses.player2Turn(1);
+	knotsAndCrosses.player1Turn(2);
+	knotsAndCrosses.player2Turn(3);
+	knotsAndCrosses.player1Turn(4);
+	knotsAndCrosses.player2Turn(5);
+	knotsAndCrosses.player1Turn(6);
+	knotsAndCrosses.player2Turn(7);
+	knotsAndCrosses.player1Turn(8);
+
+	expect(knotsAndCrosses.player2Turn(0)).toEqual("GAME OVER!");
 });
