@@ -1,5 +1,5 @@
 const game = {
-	gameBoard: [],
+	gameBoard: ["-", "-", "-", "-", "-", "-", "-", "-", "-"],
 	player1Token: "",
 	player2Token: "",
 
@@ -17,8 +17,12 @@ const game = {
 	setPlayers(tokens) {
 		this.player1Token = tokens[0];
 		this.player2Token = tokens[1];
-		
+
 		return [this.player1Token, this.player2Token];
+	},
+
+	player1Turn(space) {
+		this.gameBoard[space] = this.player1Token;
 	},
 };
 

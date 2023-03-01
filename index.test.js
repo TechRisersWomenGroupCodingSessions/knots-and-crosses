@@ -23,5 +23,15 @@ test("Player1 selects a first square, gameBoard has player1's token at index 0",
 	knotsAndCrosses.setPlayers(["X", "O"]);
 	knotsAndCrosses.player1Turn(0);
 
-	expect(knotsAndCrosses.getBoard()).toEqual(["X","-","-","-","-","-","-","-","-"]);
+	expect(knotsAndCrosses.getBoard()).toBe([
+		"X",
+		"-",
+		"-",
+		"-",
+		"-",
+		"-",
+		"-",
+		"-",
+		"-",
+	]);
 });
