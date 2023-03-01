@@ -5,9 +5,10 @@
 - Player 1 takes a valid turn (DONE)
 - Player 2 takes a valid turn (DONE)
 - Player1 makes invalid selection (already filled square) (DONE)
-- Player2 makes invalid selection (already filled square)
-- Players cannot make selections when Game ends/all squares are filled
+- Player2 makes invalid selection (already filled square) (DONE)
+- Players cannot make selections when all squares are filled
 - Game contains a winning pattern (Verify that 3 tokens in a row wins the game)
+- Players cannot make selections when Game ends
 - Game contains no winning pattern
 - When game ends scored is displayed
 - A new game in session is started (reset game)
