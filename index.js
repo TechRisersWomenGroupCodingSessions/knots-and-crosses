@@ -5,7 +5,7 @@ const game = {
 
 	// startGame resets the game
 	startGame() {
-		this.gameBoard = ["-", "-", "-", "-", "-", "-", "-"];
+		this.gameBoard = ["-", "-", "-", "-", "-", "-", "-", "-", "-"];
 
 		return this.gameBoard;
 	},
@@ -22,7 +22,17 @@ const game = {
 	},
 
 	player1Turn(space) {
-		this.gameBoard[space] = this.player1Token;
+		if (this.gameBoard[space] == '-') {
+			this.gameBoard[space] = this.player1Token;
+			return true;
+		}
+		else {
+			return false;
+		}
+	},
+
+	player2Turn(space) {
+		this.gameBoard[space] = this.player2Token;
 	},
 };
 
