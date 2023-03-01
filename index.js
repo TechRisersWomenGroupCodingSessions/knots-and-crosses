@@ -32,7 +32,13 @@ const game = {
 	},
 
 	player2Turn(space) {
-		this.gameBoard[space] = this.player2Token;
+		if (this.gameBoard[space] == '-') {
+			this.gameBoard[space] = this.player2Token;
+			return true;
+		}
+		else {
+			return false;
+		}
 	},
 };
 

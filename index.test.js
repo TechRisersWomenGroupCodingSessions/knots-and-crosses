@@ -75,3 +75,11 @@ test("Player1 select filled square after Player1 @index0 & Player2 @index4", () 
 		
 	expect(knotsAndCrosses.player1Turn(4)).toEqual(false);
 });
+
+test("Player2 select filled square after Player1 @index0", () => {
+	knotsAndCrosses.startGame();
+	knotsAndCrosses.setPlayers(["X", "O"]);
+	knotsAndCrosses.player1Turn(0);
+		
+	expect(knotsAndCrosses.player2Turn(0)).toEqual(false);
+});
