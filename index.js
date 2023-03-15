@@ -28,12 +28,12 @@ const game = {
 			if (this.gameBoard[pattern[0]] === this.player1Token
 				&& this.gameBoard[pattern[1]] === this.player1Token 
 				&& this.gameBoard[pattern[2]] === this.player1Token) {
-					return true;
+					return "P1";
 			}
 			else if (this.gameBoard[pattern[0]] === this.player2Token
 				&& this.gameBoard[pattern[1]] === this.player2Token 
 				&& this.gameBoard[pattern[2]] === this.player2Token) {
-					return true;
+					return "P2";
 			}
 		}
 		
@@ -46,8 +46,8 @@ const game = {
 				if (this.gameBoard[space] == '-') {
 					if (playerNumber === 1) {
 						this.gameBoard[space] = this.player1Token;
-						if (this.gameOver()) {
-							return "GAME OVER!"
+						if (this.gameOver() === "P1") {
+							return "GAME OVER! Player 1 has won"
 						} 
 						else {
 							return true;
@@ -55,8 +55,8 @@ const game = {
 					}
 					else if (playerNumber === 2) {
 						this.gameBoard[space] = this.player2Token;
-						if(this.gameOver()) {
-							return "GAME OVER!"
+						if(this.gameOver() === "P2") {
+							return "GAME OVER! Player 2 has won"
 						}
 						else {
 							return true;
