@@ -9,7 +9,8 @@
 - Players cannot make selections when all squares are filled (DONE)
 - refactor player turns into one function. (DONE)
 - Player must select grid on board else error (DONE)
-- Game contains a winning pattern (Verify that 3 tokens in a row wins the game)
+- Game contains a winning pattern (Verify that 3 tokens in a row wins the game) (DONE)
+- When game is over specify if winning game or not
 - Players cannot make selections when Game ends
 - Game contains no winning pattern
 - When game ends scored is displayed

@@ -123,13 +123,13 @@ test("Player must select grid on board else error", () => {
 	expect(knotsAndCrosses.playerTurn(1, 9)).toEqual("INVALID SPACE!");
 });
 
-// test("After Player takes a final winning turn, Game is over", () => {
-// 	knotsAndCrosses.startGame();
-// 	knotsAndCrosses.setPlayers(["X", "O"]);
-// 	knotsAndCrosses.playerTurn(1, 0);
-// 	knotsAndCrosses.playerTurn(2, 1);
-// 	knotsAndCrosses.playerTurn(1, 5);
-// 	knotsAndCrosses.playerTurn(2, 3);
+test("After Player takes a final winning turn, Game is over", () => {
+	knotsAndCrosses.startGame();
+	knotsAndCrosses.setPlayers(["X", "O"]);
+	knotsAndCrosses.playerTurn(1, 0);
+	knotsAndCrosses.playerTurn(2, 1);
+	knotsAndCrosses.playerTurn(1, 5);
+	knotsAndCrosses.playerTurn(2, 3);
 
-// 	expect(knotsAndCrosses.playerTurn(1, 8)).toEqual("GAME OVER!");
-// });
+	expect(knotsAndCrosses.playerTurn(1, 8)).toEqual("GAME OVER!");
+});
