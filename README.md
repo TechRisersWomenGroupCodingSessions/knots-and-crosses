@@ -7,7 +7,7 @@
 - Player1 makes invalid selection (already filled square) (DONE)
 - Player2 makes invalid selection (already filled square) (DONE)
 - Players cannot make selections when all squares are filled (DONE)
-- refactor player turns into one function. 
+- refactor player turns into one function. (DONE)
 - Game contains a winning pattern (Verify that 3 tokens in a row wins the game)
 - Players cannot make selections when Game ends
 - Game contains no winning pattern
