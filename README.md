@@ -11,7 +11,7 @@
 - Player must select grid on board else error (DONE)
 - Game contains a winning pattern (Verify that 3 tokens in a row wins the game) (DONE)
 - When game is over specify if winning game or not (DONE)
-- Players cannot make selections when Game ends
+- Players cannot make selections when Game ends (draw) - IN PROGRESS
 - Game contains no winning pattern
 - When game ends scored is displayed
 - A new game in session is started (reset game)

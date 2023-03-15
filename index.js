@@ -35,6 +35,9 @@ const game = {
 				&& this.gameBoard[pattern[2]] === this.player2Token) {
 					return "P2";
 			}
+			// else {
+			// 	return "GAME OVER! DRAW"
+			// }
 		}
 		
 		return false;
