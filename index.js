@@ -21,27 +21,32 @@ const game = {
 		return [this.player1Token, this.player2Token];
 	},
 
-	playerTurn(space, playerNumber) {
-		if (this.gameInPlay()){
-			if (this.gameBoard[space] == '-') {
-				if (playerNumber === 1) {
-					this.gameBoard[space] = this.player1Token;
-					return true;
-				}
-				else if (playerNumber === 2) {
-					this.gameBoard[space] = this.player2Token;
-					return true;
+	playerTurn(playerNumber, space) {
+		if (space >= 0 && space < 9) {
+			if (this.gameInPlay()){
+				if (this.gameBoard[space] == '-') {
+					if (playerNumber === 1) {
+						this.gameBoard[space] = this.player1Token;
+						return true;
+					}
+					else if (playerNumber === 2) {
+						this.gameBoard[space] = this.player2Token;
+						return true;
+					}
+					else {
+						return false
+					};
 				}
 				else {
-					return false
-				};
+					return false;
+				}
 			}
 			else {
-				return false;
+				return "GAME OVER!";
 			}
 		}
 		else {
-			return "GAME OVER!";
+			return "INVALID SPACE!"
 		}
 	},
 

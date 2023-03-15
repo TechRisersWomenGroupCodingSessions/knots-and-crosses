@@ -32,7 +32,7 @@ test("when tokens are set as [X,O], player2's token is O", () => {
 test("Player1 selects a first square, gameBoard has player1's token at index 0", () => {
 	knotsAndCrosses.startGame();
 	knotsAndCrosses.setPlayers(["X", "O"]);
-	knotsAndCrosses.playerTurn(0, 1);
+	knotsAndCrosses.playerTurn(1, 0);
 	console.log(knotsAndCrosses.getBoard());
 	expect(knotsAndCrosses.getBoard()).toEqual([
 		"X",
@@ -50,8 +50,8 @@ test("Player1 selects a first square, gameBoard has player1's token at index 0",
 test("Player1 select first square & Player2 selects a middle square, gameBoard has player1's token at index 0 and player2's token at index 4", () => {
 	knotsAndCrosses.startGame();
 	knotsAndCrosses.setPlayers(["X", "O"]);
-	knotsAndCrosses.playerTurn(0, 1);
-	knotsAndCrosses.playerTurn(4, 2);
+	knotsAndCrosses.playerTurn(1, 0);
+	knotsAndCrosses.playerTurn(2, 4);
 
 	expect(knotsAndCrosses.getBoard()).toEqual([
 		"X",
@@ -69,49 +69,67 @@ test("Player1 select first square & Player2 selects a middle square, gameBoard h
 test("Player1 select filled square after Player1 @index0 & Player2 @index4", () => {
 	knotsAndCrosses.startGame();
 	knotsAndCrosses.setPlayers(["X", "O"]);
-	knotsAndCrosses.playerTurn(0, 1);
-	knotsAndCrosses.playerTurn(4, 2);
-	knotsAndCrosses.playerTurn(4, 1);
+	knotsAndCrosses.playerTurn(1, 0);
+	knotsAndCrosses.playerTurn(2, 4);
+	knotsAndCrosses.playerTurn(1, 4);
 
-	expect(knotsAndCrosses.playerTurn(4, 1)).toEqual(false);
+	expect(knotsAndCrosses.playerTurn(1, 4)).toEqual(false);
 });
 
 test("Player2 select filled square after Player1 @index0", () => {
 	knotsAndCrosses.startGame();
 	knotsAndCrosses.setPlayers(["X", "O"]);
-	knotsAndCrosses.playerTurn(0, 1);
+	knotsAndCrosses.playerTurn(1, 0);
 
-	expect(knotsAndCrosses.playerTurn(0, 2)).toEqual(false);
+	expect(knotsAndCrosses.playerTurn(2, 0)).toEqual(false);
 });
 
 test("Player1 cannot make selections when all squares are filled", () => {
 	knotsAndCrosses.startGame();
 	knotsAndCrosses.setPlayers(["X", "O"]);
-	knotsAndCrosses.playerTurn(0, 1);
-	knotsAndCrosses.playerTurn(1, 2);
+	knotsAndCrosses.playerTurn(1, 0);
 	knotsAndCrosses.playerTurn(2, 1);
-	knotsAndCrosses.playerTurn(3, 2);
-	knotsAndCrosses.playerTurn(4, 1);
-	knotsAndCrosses.playerTurn(5, 2);
-	knotsAndCrosses.playerTurn(6, 1);
-	knotsAndCrosses.playerTurn(7, 2);
-	knotsAndCrosses.playerTurn(8, 1);
+	knotsAndCrosses.playerTurn(1, 2);
+	knotsAndCrosses.playerTurn(2, 3);
+	knotsAndCrosses.playerTurn(1, 4);
+	knotsAndCrosses.playerTurn(2, 5);
+	knotsAndCrosses.playerTurn(1, 6);
+	knotsAndCrosses.playerTurn(2, 7);
+	knotsAndCrosses.playerTurn(1, 8);
 
-	expect(knotsAndCrosses.playerTurn(0, 1)).toEqual("GAME OVER!");
+	expect(knotsAndCrosses.playerTurn(1, 0)).toEqual("GAME OVER!");
 });
 
 test("Player2 cannot make selections when all squares are filled", () => {
 	knotsAndCrosses.startGame();
 	knotsAndCrosses.setPlayers(["X", "O"]);
-	knotsAndCrosses.playerTurn(0, 1);
-	knotsAndCrosses.playerTurn(1, 2);
+	knotsAndCrosses.playerTurn(1, 0);
 	knotsAndCrosses.playerTurn(2, 1);
-	knotsAndCrosses.playerTurn(3, 2);
-	knotsAndCrosses.playerTurn(4, 1);
-	knotsAndCrosses.playerTurn(5, 2);
-	knotsAndCrosses.playerTurn(6, 1);
-	knotsAndCrosses.playerTurn(7, 2);
-	knotsAndCrosses.playerTurn(8, 1);
+	knotsAndCrosses.playerTurn(1, 2);
+	knotsAndCrosses.playerTurn(2, 3);
+	knotsAndCrosses.playerTurn(1, 4);
+	knotsAndCrosses.playerTurn(2, 5);
+	knotsAndCrosses.playerTurn(1, 6);
+	knotsAndCrosses.playerTurn(2, 7);
+	knotsAndCrosses.playerTurn(1, 8);
 
-	expect(knotsAndCrosses.playerTurn(0, 2)).toEqual("GAME OVER!");
+	expect(knotsAndCrosses.playerTurn(2, 0)).toEqual("GAME OVER!");
 });
+
+test("Player must select grid on board else error", () => {
+	knotsAndCrosses.startGame();
+	knotsAndCrosses.setPlayers(["X", "O"]);
+
+	expect(knotsAndCrosses.playerTurn(1, 9)).toEqual("INVALID SPACE!");
+});
+
+// test("After Player takes a final winning turn, Game is over", () => {
+// 	knotsAndCrosses.startGame();
+// 	knotsAndCrosses.setPlayers(["X", "O"]);
+// 	knotsAndCrosses.playerTurn(1, 0);
+// 	knotsAndCrosses.playerTurn(2, 1);
+// 	knotsAndCrosses.playerTurn(1, 5);
+// 	knotsAndCrosses.playerTurn(2, 3);
+
+// 	expect(knotsAndCrosses.playerTurn(1, 8)).toEqual("GAME OVER!");
+// });
