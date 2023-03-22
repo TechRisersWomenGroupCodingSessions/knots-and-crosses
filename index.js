@@ -74,7 +74,7 @@ const game = {
 				}
 			}
 			else {
-				return "GAME OVER!";
+				return "GAME OVER! Draw";
 			}
 		}
 		else {

@@ -97,7 +97,7 @@ test("Player1 cannot make selections when all squares are filled", () => {
 	knotsAndCrosses.playerTurn(2, 7);
 	knotsAndCrosses.playerTurn(1, 8);
 
-	expect(knotsAndCrosses.playerTurn(1, 0)).toEqual("GAME OVER!");
+	expect(knotsAndCrosses.playerTurn(1, 0)).toContain("GAME OVER!");
 });
 
 test("Player2 cannot make selections when all squares are filled", () => {
@@ -113,7 +113,7 @@ test("Player2 cannot make selections when all squares are filled", () => {
 	knotsAndCrosses.playerTurn(2, 7);
 	knotsAndCrosses.playerTurn(1, 8);
 
-	expect(knotsAndCrosses.playerTurn(2, 0)).toEqual("GAME OVER!");
+	expect(knotsAndCrosses.playerTurn(2, 0)).toContain("GAME OVER!");
 });
 
 test("Player must select grid on board else error", () => {
