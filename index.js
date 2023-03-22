@@ -29,20 +29,20 @@ const game = {
 			if (this.gameBoard[pattern[0]] === this.player1Token
 				&& this.gameBoard[pattern[1]] === this.player1Token 
 				&& this.gameBoard[pattern[2]] === this.player1Token) {
-					return "P1";
+					this.score = "GAME OVER! Player 1 has won";
+					return true;
 			}
 			else if (this.gameBoard[pattern[0]] === this.player2Token
 				&& this.gameBoard[pattern[1]] === this.player2Token 
 				&& this.gameBoard[pattern[2]] === this.player2Token) {
-					return "P2";
+					this.score = "GAME OVER! Player 2 has won";
+					return true;
 			}
-			// else {
-			// 	return "GAME OVER! DRAW"
-			// }
 		}
 		
 		if (!this.gameInPlay()) {
-			return "Draw";
+			this.score = "GAME OVER! Draw";
+			return true;
 		}
 
 		return false;
@@ -54,21 +54,15 @@ const game = {
 				if (this.gameBoard[space] == '-') {
 					if (playerNumber === 1) {
 						this.gameBoard[space] = this.player1Token;
-						if (this.gameOver() === "P1") {
-							return "GAME OVER! Player 1 has won"
+						if (this.gameOver()) {
+							return this.score;
 						} 
-						else if (this.gameOver() === "Draw") {
-							return "GAME OVER! DRAW";
-						}
 					}
 					else if (playerNumber === 2) {
 						this.gameBoard[space] = this.player2Token;
-						if(this.gameOver() === "P2") {
-							return "GAME OVER! Player 2 has won"
-						}
-						else if (this.gameOver() === "Draw") {
-							return "GAME OVER! DRAW";
-						}
+						if (this.gameOver()) {
+							return this.score;
+						} 
 					}
 					else {
 						return "Invalid player number";
@@ -88,7 +82,7 @@ const game = {
 	},
 
 	gameInPlay() {
-		return this.gameBoard.includes("-");
+		return this.gameBoard.includes("-") && this.score != "";
 	} 
 };
 

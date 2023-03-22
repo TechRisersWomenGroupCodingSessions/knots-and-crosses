@@ -162,7 +162,7 @@ test("After Player 2 takes a final winning turn we specify they won", () => {
 // 	expect(knotsAndCrosses.playerTurn(2, 8)).toEqual("GAME OVER! Draw");
 // });
 
-test("Player 1 wins diagonally", () => {
+test("Player 2 attempts to select square after Player 1 wins diagonally", () => {
 	
 	knotsAndCrosses.startGame();
 	knotsAndCrosses.setPlayers(["X", "O"]);
@@ -174,6 +174,6 @@ test("Player 1 wins diagonally", () => {
 	knotsAndCrosses.playerTurn(2, 5);
 	knotsAndCrosses.playerTurn(1, 6)
 
-	expect(knotsAndCrosses.playerTurn(2, 7)).toEqual("GAME OVER! Player 1 has won");
+	expect(knotsAndCrosses.playerTurn(2, 7)).toEqual("GAME OVER! No moves left");
 });
 
