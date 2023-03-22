@@ -73,7 +73,7 @@ test("Player1 select filled square after Player1 @index0 & Player2 @index4", () 
 	knotsAndCrosses.playerTurn(2, 4);
 	knotsAndCrosses.playerTurn(1, 4);
 
-	expect(knotsAndCrosses.playerTurn(1, 4)).toEqual(false);
+	expect(knotsAndCrosses.playerTurn(1, 4)).toEqual("Square filled!");
 });
 
 test("Player2 select filled square after Player1 @index0", () => {

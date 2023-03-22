@@ -40,6 +40,10 @@ const game = {
 			// }
 		}
 		
+		if (!this.gameInPlay()) {
+			return "Draw";
+		}
+
 		return false;
 	},
 
@@ -52,8 +56,8 @@ const game = {
 						if (this.gameOver() === "P1") {
 							return "GAME OVER! Player 1 has won"
 						} 
-						else {
-							return true;
+						else if (this.gameOver() === "Draw") {
+							return "GAME OVER! DRAW";
 						}
 					}
 					else if (playerNumber === 2) {
@@ -61,20 +65,20 @@ const game = {
 						if(this.gameOver() === "P2") {
 							return "GAME OVER! Player 2 has won"
 						}
-						else {
-							return true;
+						else if (this.gameOver() === "Draw") {
+							return "GAME OVER! DRAW";
 						}
 					}
 					else {
-						return false
+						return "Invalid player number";
 					};
 				}
 				else {
-					return false;
+					return "Square filled!";
 				}
 			}
 			else {
-				return "GAME OVER! Draw";
+				return "GAME OVER! No moves left";
 			}
 		}
 		else {

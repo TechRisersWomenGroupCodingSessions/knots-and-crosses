@@ -15,3 +15,4 @@
 - Game contains no winning pattern
 - When game ends scored is displayed
 - A new game in session is started (reset game)
+- Only Player 1 & 2 can take turns
