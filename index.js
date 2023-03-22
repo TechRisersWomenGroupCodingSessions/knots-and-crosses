@@ -73,7 +73,7 @@ const game = {
 				}
 			}
 			else {
-				return "GAME OVER! No moves left";
+				return "GAME OVER! No moves left. Score: " + this.score;
 			}
 		}
 		else {
@@ -82,7 +82,7 @@ const game = {
 	},
 
 	gameInPlay() {
-		return this.gameBoard.includes("-") && this.score != "";
+		return this.gameBoard.includes("-") && this.score === "";
 	} 
 };
 

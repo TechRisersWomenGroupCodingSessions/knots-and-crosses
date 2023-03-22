@@ -128,7 +128,7 @@ test("After Player 1 takes a final winning turn we specify they won", () => {
 	knotsAndCrosses.setPlayers(["X", "O"]);
 	knotsAndCrosses.playerTurn(1, 0);
 	knotsAndCrosses.playerTurn(2, 1);
-	knotsAndCrosses.playerTurn(1, 5);
+	knotsAndCrosses.playerTurn(1, 4);
 	knotsAndCrosses.playerTurn(2, 3);
 
 	expect(knotsAndCrosses.playerTurn(1, 8)).toEqual("GAME OVER! Player 1 has won");
