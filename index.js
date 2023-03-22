@@ -3,6 +3,7 @@ const game = {
 	winningPatterns: [[0, 5, 8], [0, 1, 2], [0, 3, 6], [1, 5, 7], [2, 5, 8], [2, 4, 6], [3, 4, 5], [6, 7, 8]],
 	player1Token: "",
 	player2Token: "",
+	score: "", 
 
 
 	// startGame resets the game
