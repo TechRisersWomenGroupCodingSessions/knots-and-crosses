@@ -32,7 +32,8 @@ const game = {
 					this.score = "GAME OVER! Player 1 has won";
 					return true;
 			}
-			else if (this.gameBoard[pattern[0]] === this.player2Token
+			
+			if (this.gameBoard[pattern[0]] === this.player2Token
 				&& this.gameBoard[pattern[1]] === this.player2Token 
 				&& this.gameBoard[pattern[2]] === this.player2Token) {
 					this.score = "GAME OVER! Player 2 has won";
@@ -40,7 +41,7 @@ const game = {
 			}
 		}
 		
-		if (!this.gameInPlay()) {
+		if (!this.gameInPlay() && this.score === "") {
 			this.score = "GAME OVER! Draw";
 			return true;
 		}
@@ -55,12 +56,14 @@ const game = {
 					if (playerNumber === 1) {
 						this.gameBoard[space] = this.player1Token;
 						if (this.gameOver()) {
+							console.log("Score:" + this.score);
 							return this.score;
 						} 
 					}
 					else if (playerNumber === 2) {
 						this.gameBoard[space] = this.player2Token;
 						if (this.gameOver()) {
+							console.log("Score:" + this.score);
 							return this.score;
 						} 
 					}
@@ -82,7 +85,7 @@ const game = {
 	},
 
 	gameInPlay() {
-		return this.gameBoard.includes("-") && this.score === "";
+		return this.gameBoard.includes("-");
 	} 
 };
 
