@@ -53,6 +53,8 @@ const game = {
 			}
 		}
 
+		console.log("gameInPlay:" + this.gameInPlay());
+		console.log("score:" + this.score);
 		if (!this.gameInPlay() && this.score === "") {
 			this.score = "GAME OVER! Draw";
 			return true;
