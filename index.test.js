@@ -1,3 +1,4 @@
+const { gameBoard } = require("./index");
 const knotsAndCrosses = require("./index");
 
 test("that a user can start a new ", () => {
@@ -137,30 +138,31 @@ test("After Player 1 takes a final winning turn we specify they won", () => {
 test("After Player 2 takes a final winning turn we specify they won", () => {
 	knotsAndCrosses.startGame();
 	knotsAndCrosses.setPlayers(["X", "O"]);
+	knotsAndCrosses.playerTurn(1, 7);
 	knotsAndCrosses.playerTurn(2, 0);
 	knotsAndCrosses.playerTurn(1, 1);
-	knotsAndCrosses.playerTurn(2, 5);
+	knotsAndCrosses.playerTurn(2, 4);
 	knotsAndCrosses.playerTurn(1, 3);
 
 	expect(knotsAndCrosses.playerTurn(2, 8)).toEqual("GAME OVER! Player 2 has won");
 });
 
-// test("No winner and game over - draw", () => {
+test("No winner and game over - draw", () => {
 
-// 	knotsAndCrosses.startGame();
-// 	knotsAndCrosses.setPlayers(["X", "O"]);
-// 	knotsAndCrosses.playerTurn(1, 0);
-// 	knotsAndCrosses.playerTurn(2, 1);
-// 	knotsAndCrosses.playerTurn(1, 2);
-// 	knotsAndCrosses.playerTurn(2, 3);
-// 	knotsAndCrosses.playerTurn(1, 4);
-// 	knotsAndCrosses.playerTurn(2, 5);
-// 	knotsAndCrosses.playerTurn(1, 6);
-// 	knotsAndCrosses.playerTurn(2, 7);
-// 	knotsAndCrosses.playerTurn(1, 8);
-
-// 	expect(knotsAndCrosses.playerTurn(2, 8)).toEqual("GAME OVER! Draw");
-// });
+	knotsAndCrosses.startGame();
+	knotsAndCrosses.setPlayers(["X", "O"]);
+	knotsAndCrosses.playerTurn(1, 0);
+	knotsAndCrosses.playerTurn(2, 1);
+	knotsAndCrosses.playerTurn(1, 2);
+	knotsAndCrosses.playerTurn(2, 3);
+	knotsAndCrosses.playerTurn(1, 4);
+	knotsAndCrosses.playerTurn(2, 5);
+	knotsAndCrosses.playerTurn(1, 6);
+	knotsAndCrosses.playerTurn(2, 7);
+	knotsAndCrosses.playerTurn(1, 8);
+	console.log(knotsAndCrosses.getBoard());
+	expect(knotsAndCrosses.playerTurn(2, 8)).toEqual("GAME OVER! Draw");
+});
 
 // test("Player 2 attempts to select square after Player 1 wins diagonally", () => {
 	

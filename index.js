@@ -56,14 +56,13 @@ const game = {
 					if (playerNumber === 1) {
 						this.gameBoard[space] = this.player1Token;
 						if (this.gameOver()) {
-							console.log("Score:" + this.score);
+							
 							return this.score;
 						} 
 					}
 					else if (playerNumber === 2) {
 						this.gameBoard[space] = this.player2Token;
 						if (this.gameOver()) {
-							console.log("Score:" + this.score);
 							return this.score;
 						} 
 					}
