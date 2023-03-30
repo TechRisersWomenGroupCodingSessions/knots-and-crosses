@@ -21,6 +21,13 @@ const game = {
 		return this.gameBoard;
 	},
 
+	// reset score
+	resetScore() {
+		this.score = "";
+
+		return this.score;
+	},
+
 	getBoard() {
 		return this.gameBoard;
 	},
@@ -53,9 +60,10 @@ const game = {
 			}
 		}
 
-		console.log("gameInPlay:" + this.gameInPlay());
-		console.log("score:" + this.score);
+		// console.log("gameInPlay:" + this.gameInPlay());
+		// console.log("score:" + this.score);
 		if (!this.gameInPlay() && this.score === "") {
+			console.log("a draw!");
 			this.score = "GAME OVER! Draw";
 			return true;
 		}
@@ -64,6 +72,7 @@ const game = {
 	},
 
 	playerTurn(playerNumber, space) {
+		console.log(playerNumber, space);
 		if (space >= 0 && space < 9) {
 			if (this.gameInPlay()) {
 				if (this.gameBoard[space] == "-") {

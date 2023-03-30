@@ -34,7 +34,7 @@ test("Player1 selects a first square, gameBoard has player1's token at index 0",
 	knotsAndCrosses.startGame();
 	knotsAndCrosses.setPlayers(["X", "O"]);
 	knotsAndCrosses.playerTurn(1, 0);
-	console.log(knotsAndCrosses.getBoard());
+	// console.log(knotsAndCrosses.getBoard());
 	expect(knotsAndCrosses.getBoard()).toEqual([
 		"X",
 		"-",
@@ -153,6 +153,7 @@ test("After Player 2 takes a final winning turn we specify they won", () => {
 
 test("No winner and game over - draw", () => {
 	knotsAndCrosses.startGame();
+	knotsAndCrosses.resetScore();
 	knotsAndCrosses.setPlayers(["X", "O"]);
 	knotsAndCrosses.playerTurn(1, 0);
 	knotsAndCrosses.playerTurn(2, 1);
