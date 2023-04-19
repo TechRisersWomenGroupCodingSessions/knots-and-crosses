@@ -17,15 +17,7 @@ const game = {
 	// startGame resets the game
 	startGame() {
 		this.gameBoard = ["-", "-", "-", "-", "-", "-", "-", "-", "-"];
-
-		return this.gameBoard;
-	},
-
-	// reset score
-	resetScore() {
 		this.score = "";
-
-		return this.score;
 	},
 
 	getBoard() {

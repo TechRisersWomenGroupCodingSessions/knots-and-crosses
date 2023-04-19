@@ -12,7 +12,7 @@
 - Game contains a winning pattern (Verify that 3 tokens in a row wins the game) (DONE)
 - When game is over specify if winning game or not (DONE)
 - Players cannot make selections when Game ends (draw) (DONE)
-- Game contains no winning pattern
-- When game ends scored is displayed
-- A new game in session is started (reset game)
+- Game contains no winning pattern (DONE)
+- When game ends scored is displayed (DONE)
+- A new game in session is started (reset game) (DONE)
 - Only Player 1 & 2 can take turns
