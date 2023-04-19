@@ -167,17 +167,16 @@ test("No winner and game over - draw", () => {
 	expect(knotsAndCrosses.playerTurn(1, 7)).toEqual("GAME OVER! Draw");
 });
 
-// test("Player 2 attempts to select square after Player 1 wins diagonally", () => {
+test("Player 2 attempts to select square after Player 1 wins diagonally", () => {
+	knotsAndCrosses.startGame();
+	knotsAndCrosses.setPlayers(["X", "O"]);
+	knotsAndCrosses.playerTurn(1, 0);
+	knotsAndCrosses.playerTurn(2, 1);
+	knotsAndCrosses.playerTurn(1, 2);
+	knotsAndCrosses.playerTurn(2, 3);
+	knotsAndCrosses.playerTurn(1, 4);
+	knotsAndCrosses.playerTurn(2, 5);
+	knotsAndCrosses.playerTurn(1, 6)
 
-// 	knotsAndCrosses.startGame();
-// 	knotsAndCrosses.setPlayers(["X", "O"]);
-// 	knotsAndCrosses.playerTurn(1, 0);
-// 	knotsAndCrosses.playerTurn(2, 1);
-// 	knotsAndCrosses.playerTurn(1, 2);
-// 	knotsAndCrosses.playerTurn(2, 3);
-// 	knotsAndCrosses.playerTurn(1, 4);
-// 	knotsAndCrosses.playerTurn(2, 5);
-// 	knotsAndCrosses.playerTurn(1, 6)
-
-// 	expect(knotsAndCrosses.playerTurn(2, 7)).toEqual("GAME OVER! No moves left");
-// });
+	expect(knotsAndCrosses.playerTurn(2, 7)).toEqual("GAME OVER! Player 1 has won");
+});
