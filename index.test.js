@@ -153,7 +153,6 @@ test("After Player 2 takes a final winning turn we specify they won", () => {
 
 test("No winner and game over - draw", () => {
 	knotsAndCrosses.startGame();
-
 	knotsAndCrosses.setPlayers(["X", "O"]);
 	knotsAndCrosses.playerTurn(1, 0);
 	knotsAndCrosses.playerTurn(2, 1);
