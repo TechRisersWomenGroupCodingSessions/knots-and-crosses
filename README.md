@@ -16,4 +16,15 @@
 - When game ends scored is displayed (DONE)
 - A new game in session is started (reset game) (DONE)
 - Only Player 1 & 2 can take turns (DONE)
+
 - Set up game interface
+    - Add html page (DONE)
+    - Add gameboard grid (div) to page (DONE)
+    - Add attribute Id to grid spaces (divs) (DONE)
+    - Add attribute onclick to grid spaces for player selection call (DONE)
+    - Add onclick function code to take player turn
+    - Add onclick call to update html grid spaces after turn
+    - Add functionality to onclick to ignore square selection when game over
+    - Add active player and score identifiers
+    - Add player token assignment/selector on page
+    - Add button to restart game
