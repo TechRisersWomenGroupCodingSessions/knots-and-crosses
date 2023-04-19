@@ -15,4 +15,4 @@
 - Game contains no winning pattern (DONE)
 - When game ends scored is displayed (DONE)
 - A new game in session is started (reset game) (DONE)
-- Only Player 1 & 2 can take turns
+- Only Player 1 & 2 can take turns (DONE)

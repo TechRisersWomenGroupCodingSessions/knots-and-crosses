@@ -180,3 +180,10 @@ test("Player 2 attempts to select square after Player 1 wins diagonally", () => 
 
 	expect(knotsAndCrosses.playerTurn(2, 7)).toEqual("GAME OVER! Player 1 has won");
 });
+
+test("Only Player 1 & 2 can take turns", () => {
+	knotsAndCrosses.startGame();
+	knotsAndCrosses.setPlayers(["O", "X"]);
+
+	expect(knotsAndCrosses.playerTurn(3, 0)).toEqual("Invalid player number");
+})
