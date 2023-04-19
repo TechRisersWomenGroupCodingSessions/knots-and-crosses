@@ -16,3 +16,4 @@
 - When game ends scored is displayed (DONE)
 - A new game in session is started (reset game) (DONE)
 - Only Player 1 & 2 can take turns (DONE)
+- Set up game interface
