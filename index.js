@@ -15,7 +15,7 @@ const game = {
 	score: "",
 
 	// startGame resets the game
-	resetGame()
+
 	startGame() {
 		this.gameBoard = ["-", "-", "-", "-", "-", "-", "-", "-", "-"];
 		this.score = "";
